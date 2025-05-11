@@ -1,0 +1,1 @@
+this is the sql database schema for creating the necessary tables for this database.
