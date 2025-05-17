@@ -1,3 +1,5 @@
+--Non-Correlated Subquery: Find all properties where the average rating is greater than 4.0 
+
 SELECT 
     p.property_id,
     p.name,
@@ -18,3 +20,23 @@ WHERE
     )
 ORDER BY 
     p.name ASC;
+
+--Find users who have made more than 3 bookings
+
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email
+FROM 
+    user u
+WHERE (
+    SELECT 
+        COUNT(*)
+    FROM 
+        booking b
+    WHERE 
+        b.user_id = u.user_id
+) > 3
+ORDER BY 
+    u.last_name ASC;
