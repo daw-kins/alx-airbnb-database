@@ -1,6 +1,7 @@
 
--- Create User table
-CREATE TABLE user (
+
+-- Create Users table
+CREATE TABLE users (
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
@@ -11,8 +12,10 @@ CREATE TABLE user (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+
 -- Create index on email for faster lookups
 CREATE INDEX idx_user_email ON user(email);
+
 
 -- Create Property table
 CREATE TABLE property (
@@ -27,8 +30,10 @@ CREATE TABLE property (
     FOREIGN KEY (host_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
 
+
 -- Create index on host_id for faster joins
 CREATE INDEX idx_property_host_id ON property(host_id);
+
 
 -- Create Booking table
 CREATE TABLE booking (
@@ -44,10 +49,12 @@ CREATE TABLE booking (
     CHECK (end_date > start_date)
 );
 
+
 -- Create indexes on foreign keys and status for faster queries
 CREATE INDEX idx_booking_property_id ON booking(property_id);
 CREATE INDEX idx_booking_user_id ON booking(user_id);
 CREATE INDEX idx_booking_status ON booking(status);
+
 
 -- Create Payment table
 CREATE TABLE payment (
@@ -59,8 +66,10 @@ CREATE TABLE payment (
     FOREIGN KEY (booking_id) REFERENCES booking(booking_id) ON DELETE CASCADE
 );
 
+
 -- Create index on booking_id for faster joins
 CREATE INDEX idx_payment_booking_id ON payment(booking_id);
+
 
 -- Create Message table
 CREATE TABLE message (
@@ -77,6 +86,7 @@ CREATE TABLE message (
 CREATE INDEX idx_message_sender_id ON message(sender_id);
 CREATE INDEX idx_message_recipient_id ON message(recipient_id);
 
+
 -- Create Review table
 CREATE TABLE review (
     review_id INT AUTO_INCREMENT PRIMARY KEY,
@@ -88,6 +98,7 @@ CREATE TABLE review (
     FOREIGN KEY (property_id) REFERENCES property(property_id) ON DELETE CASCADE,
     FOREIGN KEY (user_id) REFERENCES user(user_id) ON DELETE CASCADE
 );
+
 
 -- Create indexes on foreign keys for faster joins
 CREATE INDEX idx_review_property_id ON review(property_id);
