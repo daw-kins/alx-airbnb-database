@@ -1,34 +1,107 @@
--- Insert sample data into User table
+-- Insert 15 records into User table
 INSERT INTO user (user_id, first_name, last_name, email, password_hash, phone_number, role, created_at) VALUES
-('11111111-2222-3333-4444-555555555555', 'Alice', 'Smith', 'alice.smith@example.com', 'hashed_pwd1', '123-456-7890', 'host', '2025-01-01 10:00:00'),
-('22222222-3333-4444-5555-666666666666', 'Bob', 'Jones', 'bob.jones@example.com', 'hashed_pwd2', '234-567-8901', 'guest', '2025-01-02 12:00:00'),
-('33333333-4444-5555-6666-777777777777', 'Charlie', 'Brown', 'charlie.brown@example.com', 'hashed_pwd3', '345-678-9012', 'host', '2025-01-03 14:00:00');
+('11111111-1111-1111-1111-111111111111', 'Alice', 'Smith', 'alice.smith@example.com', 'hash1', '123-456-7890', 'host', '2025-01-01 10:00:00'),
+('22222222-2222-2222-2222-222222222222', 'Bob', 'Jones', 'bob.jones@example.com', 'hash2', '234-567-8901', 'guest', '2025-01-02 12:00:00'),
+('33333333-3333-3333-3333-333333333333', 'Charlie', 'Brown', 'charlie.brown@example.com', 'hash3', '345-678-9012', 'host', '2025-01-03 14:00:00'),
+('44444444-4444-4444-4444-444444444444', 'David', 'Wilson', 'david.wilson@example.com', 'hash4', '456-789-0123', 'guest', '2025-01-04 16:00:00'),
+('55555555-5555-5555-5555-555555555555', 'Eve', 'Davis', 'eve.davis@example.com', 'hash5', '567-890-1234', 'admin', '2025-01-05 18:00:00'),
+('66666666-6666-6666-6666-666666666666', 'Frank', 'Miller', 'frank.miller@example.com', 'hash6', '678-901-2345', 'host', '2025-01-06 20:00:00'),
+('77777777-7777-7777-7777-777777777777', 'Grace', 'Taylor', 'grace.taylor@example.com', 'hash7', '789-012-3456', 'guest', '2025-01-07 22:00:00'),
+('88888888-8888-8888-8888-888888888888', 'Henry', 'Moore', 'henry.moore@example.com', 'hash8', '890-123-4567', 'host', '2025-01-08 09:00:00'),
+('99999999-9999-9999-9999-999999999999', 'Isabella', 'Clark', 'isabella.clark@example.com', 'hash9', '901-234-5678', 'guest', '2025-01-09 11:00:00'),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'Jack', 'Lewis', 'jack.lewis@example.com', 'hash10', '012-345-6789', 'host', '2025-01-10 13:00:00'),
+('bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 'Kelly', 'Walker', 'kelly.walker@example.com', 'hash11', '123-456-7891', 'guest', '2025-01-11 15:00:00'),
+('cccccccc-cccc-cccc-cccc-cccccccccccc', 'Liam', 'Hall', 'liam.hall@example.com', 'hash12', '234-567-8902', 'admin', '2025-01-12 17:00:00'),
+('dddddddd-dddd-dddd-dddd-dddddddddddd', 'Mia', 'Allen', 'mia.allen@example.com', 'hash13', '345-678-9013', 'guest', '2025-01-13 19:00:00'),
+('eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'Noah', 'Young', 'noah.young@example.com', 'hash14', '456-789-0124', 'host', '2025-01-14 21:00:00'),
+('ffffffff-ffff-ffff-ffff-ffffffffffff', 'Olivia', 'King', 'olivia.king@example.com', 'hash15', '567-890-1235', 'guest', '2025-01-15 23:00:00');
 
--- Insert sample data into Property table
-INSERT INTO property (property_id, host_id, name, description, location, price_per_night, created_at, updated_at) VALUES
-('44444444-5555-6666-7777-888888888888', '11111111-2222-3333-4444-555555555555', 'Cozy Cabin', 'A cozy cabin in the woods', 'Woodland, CA', 100.00, '2025-02-01 09:00:00', NULL),
-('55555555-6666-7777-8888-999999999999', '11111111-2222-3333-4444-555555555555', 'Beach House', 'A lovely beach house with ocean views', 'Santa Monica, CA', 200.00, '2025-02-02 11:00:00', NULL),
-('66666666-7777-8888-9999-000000000000', '33333333-4444-5555-6666-777777777777', 'City Apartment', 'Modern apartment in downtown', 'San Francisco, CA', 150.00, '2025-02-03 13:00:00', NULL);
+-- Insert 15 records into Property table
+INSERT INTO property (property_id, host_id, name, description, location, pricepernight, created_at, updated_at) VALUES
+('11111111-2222-3333-4444-555555555555', '11111111-1111-1111-1111-111111111111', 'Cozy Cabin', 'A cozy cabin in the woods', 'Woodland, CA', 100.00, '2025-02-01 09:00:00', NULL),
+('22222222-3333-4444-5555-666666666666', '11111111-1111-1111-1111-111111111111', 'Beach House', 'A lovely beach house with ocean views', 'Santa Monica, CA', 200.00, '2025-02-02 11:00:00', NULL),
+('33333333-4444-5555-6666-777777777777', '33333333-3333-3333-3333-333333333333', 'City Apartment', 'Modern apartment in downtown', 'San Francisco, CA', 150.00, '2025-02-03 13:00:00', NULL),
+('44444444-5555-6666-7777-888888888888', '33333333-3333-3333-3333-333333333333', 'Mountain Retreat', 'A quiet retreat in the mountains', 'Aspen, CO', 180.00, '2025-02-04 15:00:00', NULL),
+('55555555-6666-7777-8888-999999999999', '66666666-6666-6666-6666-666666666666', 'Lake House', 'A house by the lake with a great view', 'Lake Tahoe, NV', 220.00, '2025-02-05 17:00:00', NULL),
+('66666666-7777-8888-9999-000000000000', '66666666-6666-6666-6666-666666666666', 'Urban Loft', 'A stylish loft in the city center', 'Chicago, IL', 130.00, '2025-02-06 19:00:00', NULL),
+('77777777-8888-9999-0000-111111111111', '88888888-8888-8888-8888-888888888888', 'Countryside Villa', 'A spacious villa in the countryside', 'Tuscany, Italy', 250.00, '2025-02-07 21:00:00', NULL),
+('88888888-9999-0000-1111-222222222222', '88888888-8888-8888-8888-888888888888', 'Downtown Studio', 'A small studio in the heart of the city', 'New York, NY', 120.00, '2025-02-08 23:00:00', NULL),
+('99999999-0000-1111-2222-333333333333', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'Seaside Cottage', 'A charming cottage by the sea', 'Cape Cod, MA', 190.00, '2025-02-09 09:00:00', NULL),
+('aaaaaaaa-1111-2222-3333-444444444444', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'Forest Cabin', 'A cabin surrounded by forest', 'Bend, OR', 110.00, '2025-02-10 11:00:00', NULL),
+('bbbbbbbb-2222-3333-4444-555555555555', 'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'Luxury Penthouse', 'A luxury penthouse with city views', 'Miami, FL', 300.00, '2025-02-11 13:00:00', NULL),
+('cccccccc-3333-4444-5555-666666666666', 'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'Rustic Farmhouse', 'A rustic farmhouse with a big yard', 'Napa Valley, CA', 170.00, '2025-02-12 15:00:00', NULL),
+('dddddddd-4444-5555-6666-777777777777', '11111111-1111-1111-1111-111111111111', 'Ski Chalet', 'A chalet near ski slopes', 'Vail, CO', 240.00, '2025-02-13 17:00:00', NULL),
+('eeeeeeee-5555-6666-7777-888888888888', '33333333-3333-3333-3333-333333333333', 'Historic Townhouse', 'A historic townhouse in the old town', 'Boston, MA', 160.00, '2025-02-14 19:00:00', NULL),
+('ffffffff-6666-7777-8888-999999999999', '66666666-6666-6666-6666-666666666666', 'Desert Retreat', 'A retreat in the desert with stunning views', 'Sedona, AZ', 210.00, '2025-02-15 21:00:00', NULL);
 
--- Insert sample data into Booking table
-INSERT INTO booking (booking_id, property_id, user_id, start_date, end_date, status, created_at) VALUES
-('77777777-8888-9999-0000-111111111111', '44444444-5555-6666-7777-888888888888', '22222222-3333-4444-5555-666666666666', '2025-05-01', '2025-05-05', 'confirmed', '2025-04-01 15:00:00'),
-('88888888-9999-0000-1111-222222222222', '55555555-6666-7777-8888-999999999999', '22222222-3333-4444-5555-666666666666', '2025-06-01', '2025-06-03', 'pending', '2025-04-02 16:00:00'),
-('99999999-0000-1111-2222-333333333333', '66666666-7777-8888-9999-000000000000', '22222222-3333-4444-5555-666666666666', '2025-07-01', '2025-07-04', 'confirmed', '2025-04-03 17:00:00');
+-- Insert 15 records into Booking table
+INSERT INTO booking (booking_id, property_id, user_id, start_date, end_date, total_price, status, created_at) VALUES
+('11111111-3333-4444-5555-666666666666', '11111111-2222-3333-4444-555555555555', '22222222-2222-2222-2222-222222222222', '2025-05-01', '2025-05-05', 400.00, 'confirmed', '2025-04-01 15:00:00'),
+('22222222-4444-5555-6666-777777777777', '22222222-3333-4444-5555-666666666666', '22222222-2222-2222-2222-222222222222', '2025-06-01', '2025-06-03', 400.00, 'pending', '2025-04-02 16:00:00'),
+('33333333-5555-6666-7777-888888888888', '33333333-4444-5555-6666-777777777777', '44444444-4444-4444-4444-444444444444', '2025-07-01', '2025-07-04', 450.00, 'confirmed', '2025-04-03 17:00:00'),
+('44444444-6666-7777-8888-999999999999', '44444444-5555-6666-7777-888888888888', '44444444-4444-4444-4444-444444444444', '2025-08-01', '2025-08-06', 900.00, 'pending', '2025-04-04 18:00:00'),
+('55555555-7777-8888-9999-000000000000', '55555555-6666-7777-8888-999999999999', '77777777-7777-7777-7777-777777777777', '2025-05-10', '2025-05-15', 1100.00, 'confirmed', '2025-04-05 19:00:00'),
+('66666666-8888-9999-0000-111111111111', '66666666-7777-8888-9999-000000000000', '77777777-7777-7777-7777-777777777777', '2025-06-10', '2025-06-12', 260.00, 'canceled', '2025-04-06 20:00:00'),
+('77777777-9999-0000-1111-222222222222', '77777777-8888-9999-0000-111111111111', '99999999-9999-9999-9999-999999999999', '2025-07-15', '2025-07-20', 1250.00, 'confirmed', '2025-04-07 21:00:00'),
+('88888888-0000-1111-2222-333333333333', '88888888-9999-0000-1111-222222222222', '99999999-9999-9999-9999-999999999999', '2025-08-15', '2025-08-18', 360.00, 'pending', '2025-04-08 22:00:00'),
+('99999999-1111-2222-3333-444444444444', '99999999-0000-1111-2222-333333333333', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', '2025-05-20', '2025-05-25', 950.00, 'confirmed', '2025-04-09 23:00:00'),
+('aaaaaaaa-2222-3333-4444-555555555555', 'aaaaaaaa-1111-2222-3333-444444444444', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', '2025-06-20', '2025-06-22', 220.00, 'canceled', '2025-04-10 09:00:00'),
+('bbbbbbbb-3333-4444-5555-666666666666', 'bbbbbbbb-2222-3333-4444-555555555555', 'dddddddd-dddd-dddd-dddd-dddddddddddd', '2025-07-25', '2025-07-30', 1500.00, 'confirmed', '2025-04-11 10:00:00'),
+('cccccccc-4444-5555-6666-777777777777', 'cccccccc-3333-4444-5555-666666666666', 'dddddddd-dddd-dddd-dddd-dddddddddddd', '2025-08-25', '2025-08-28', 510.00, 'pending', '2025-04-12 11:00:00'),
+('dddddddd-5555-6666-7777-888888888888', 'dddddddd-4444-5555-6666-777777777777', 'ffffffff-ffff-ffff-ffff-ffffffffffff', '2025-05-05', '2025-05-10', 1200.00, 'confirmed', '2025-04-13 12:00:00'),
+('eeeeeeee-6666-7777-8888-999999999999', 'eeeeeeee-5555-6666-7777-888888888888', 'ffffffff-ffff-ffff-ffff-ffffffffffff', '2025-06-05', '2025-06-07', 320.00, 'canceled', '2025-04-14 13:00:00'),
+('ffffffff-7777-8888-9999-000000000000', 'ffffffff-6666-7777-8888-999999999999', '22222222-2222-2222-2222-222222222222', '2025-07-10', '2025-07-15', 1050.00, 'confirmed', '2025-04-15 14:00:00');
 
--- Insert sample data into Payment table
+-- Insert 15 records into Payment table
 INSERT INTO payment (payment_id, booking_id, amount, payment_date, payment_method) VALUES
-('aaaaaaa1-bbbb-cccc-dddd-eeeeeeeeeeee', '77777777-8888-9999-0000-111111111111', 400.00, '2025-04-01', 'credit_card'),
-('bbbbbbb2-cccc-dddd-eeee-ffffffffffff', '77777777-8888-9999-0000-111111111111', 100.00, '2025-04-02', 'paypal'),
-('ccccccc3-dddd-eeee-ffff-gggggggggggg', '99999999-0000-1111-2222-333333333333', 450.00, '2025-04-03', 'credit_card');
+('11111111-4444-5555-6666-777777777777', '11111111-3333-4444-5555-666666666666', 400.00, '2025-04-01 15:00:00', 'credit_card'),
+('22222222-5555-6666-7777-888888888888', '11111111-3333-4444-5555-666666666666', 100.00, '2025-04-02 16:00:00', 'paypal'),
+('33333333-6666-7777-8888-999999999999', '33333333-5555-6666-7777-888888888888', 450.00, '2025-04-03 17:00:00', 'credit_card'),
+('44444444-7777-8888-9999-000000000000', '44444444-6666-7777-8888-999999999999', 900.00, '2025-04-04 18:00:00', 'stripe'),
+('55555555-8888-9999-0000-111111111111', '55555555-7777-8888-9999-000000000000', 1100.00, '2025-04-05 19:00:00', 'credit_card'),
+('66666666-9999-0000-1111-222222222222', '77777777-9999-0000-1111-222222222222', 1250.00, '2025-04-07 21:00:00', 'paypal'),
+('77777777-0000-1111-2222-333333333333', '88888888-0000-1111-2222-333333333333', 360.00, '2025-04-08 22:00:00', 'stripe'),
+('88888888-1111-2222-3333-444444444444', '99999999-1111-2222-3333-444444444444', 950.00, '2025-04-09 23:00:00', 'credit_card'),
+('99999999-2222-3333-4444-555555555555', 'bbbbbbbb-3333-4444-5555-666666666666', 1500.00, '2025-04-11 10:00:00', 'paypal'),
+('aaaaaaaa-3333-4444-5555-666666666666', 'cccccccc-4444-5555-6666-777777777777', 510.00, '2025-04-12 11:00:00', 'stripe'),
+('bbbbbbbb-4444-5555-6666-777777777777', 'dddddddd-5555-6666-7777-888888888888', 1200.00, '2025-04-13 12:00:00', 'credit_card'),
+('cccccccc-5555-6666-7777-888888888888', 'dddddddd-5555-6666-7777-888888888888', 600.00, '2025-04-14 13:00:00', 'paypal'),
+('dddddddd-6666-7777-8888-999999999999', 'ffffffff-7777-8888-9999-000000000000', 1050.00, '2025-04-15 14:00:00', 'credit_card'),
+('eeeeeeee-7777-8888-9999-000000000000', 'ffffffff-7777-8888-9999-000000000000', 525.00, '2025-04-16 15:00:00', 'stripe'),
+('ffffffff-8888-9999-0000-111111111111', '55555555-7777-8888-9999-000000000000', 550.00, '2025-04-17 16:00:00', 'paypal');
 
--- Insert sample data into Message table
-INSERT INTO message (message_id, sender_id, recipient_id, body, sent_at) VALUES
-('ddddddd4-eeee-ffff-gggg-hhhhhhhhhhhh', '22222222-3333-4444-5555-666666666666', '11111111-2222-3333-4444-555555555555', 'Is the cabin available for May?', '2025-03-01 10:00:00'),
-('eeeeeee5-ffff-gggg-hhhh-iiiiiiiiiiii', '11111111-2222-3333-4444-555555555555', '22222222-3333-4444-5555-666666666666', 'Yes, it’s available!', '2025-03-02 11:00:00'),
-('fffffff6-gggg-hhhh-iiii-jjjjjjjjjjjj', '22222222-3333-4444-5555-666666666666', '33333333-4444-5555-6666-777777777777', 'How’s the apartment location?', '2025-03-03 12:00:00');
-
--- Insert sample data into Review table
+-- Insert 15 records into Review table
 INSERT INTO review (review_id, property_id, user_id, rating, comment, created_at) VALUES
-('ggggggg7-hhhh-iiii-jjjj-kkkkkkkkkkkk', '44444444-5555-6666-7777-888888888888', '22222222-3333-4444-5555-666666666666', 5, 'Amazing stay, very cozy!', '2025-05-06 09:00:00'),
-('hhhhhhh8-iiii-jjjj-kkkk-llllllllllll', '66666666-7777-8888-9999-000000000000', '22222222-3333-4444-5555-666666666666', 4, 'Great location, but noisy at night.', '2025-07-05 10:00:00');
+('11111111-5555-6666-7777-888888888888', '11111111-2222-3333-4444-555555555555', '22222222-2222-2222-2222-222222222222', 5, 'Amazing stay, very cozy!', '2025-05-06 09:00:00'),
+('22222222-6666-7777-8888-999999999999', '33333333-4444-5555-6666-777777777777', '44444444-4444-4444-4444-444444444444', 4, 'Great location, but noisy at night.', '2025-07-05 10:00:00'),
+('33333333-7777-8888-9999-000000000000', '44444444-5555-6666-7777-888888888888', '44444444-4444-4444-4444-444444444444', 3, 'Decent place, but needs better amenities.', '2025-08-07 11:00:00'),
+('44444444-8888-9999-0000-111111111111', '55555555-6666-7777-8888-999999999999', '77777777-7777-7777-7777-777777777777', 5, 'Loved the lake view!', '2025-05-16 12:00:00'),
+('55555555-9999-0000-1111-222222222222', '77777777-8888-9999-0000-111111111111', '99999999-9999-9999-9999-999999999999', 4, 'Beautiful villa, very spacious.', '2025-07-21 13:00:00'),
+('66666666-0000-1111-2222-333333333333', '99999999-0000-1111-2222-333333333333', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 5, 'Perfect seaside getaway!', '2025-05-26 14:00:00'),
+('77777777-1111-2222-3333-444444444444', 'bbbbbbbb-2222-3333-4444-555555555555', 'dddddddd-dddd-dddd-dddd-dddddddddddd', 4, 'Luxurious stay, worth the price.', '2025-07-31 15:00:00'),
+('88888888-2222-3333-4444-555555555555', 'dddddddd-4444-5555-6666-777777777777', 'ffffffff-ffff-ffff-ffff-ffffffffffff', 5, 'Amazing ski chalet!', '2025-05-11 16:00:00'),
+('99999999-3333-4444-5555-666666666666', 'ffffffff-6666-7777-8888-999999999999', '22222222-2222-2222-2222-222222222222', 4, 'Stunning desert views!', '2025-07-16 17:00:00'),
+('aaaaaaaa-4444-5555-6666-777777777777', '22222222-3333-4444-5555-666666666666', '22222222-2222-2222-2222-222222222222', 3, 'Nice beach house, but a bit pricey.', '2025-06-04 18:00:00'),
+('bbbbbbbb-5555-6666-7777-888888888888', '66666666-7777-8888-9999-000000000000', '77777777-7777-7777-7777-777777777777', 2, 'Loft was okay, but not very clean.', '2025-06-13 19:00:00'),
+('cccccccc-6666-7777-8888-999999999999', '88888888-9999-0000-1111-222222222222', '99999999-9999-9999-9999-999999999999', 3, 'Studio is small but in a great location.', '2025-08-19 20:00:00'),
+('dddddddd-7777-8888-9999-000000000000', 'aaaaaaaa-1111-2222-3333-444444444444', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 4, 'Loved the forest setting!', '2025-06-23 21:00:00'),
+('eeeeeeee-8888-9999-0000-111111111111', 'cccccccc-3333-4444-5555-666666666666', 'dddddddd-dddd-dddd-dddd-dddddddddddd', 5, 'The farmhouse was charming!', '2025-08-29 22:00:00'),
+('ffffffff-9999-0000-1111-222222222222', 'eeeeeeee-5555-6666-7777-888888888888', 'ffffffff-ffff-ffff-ffff-ffffffffffff', 4, 'Great historic townhouse!', '2025-06-08 23:00:00');
+
+-- Insert 15 records into Message table
+INSERT INTO message (message_id, sender_id, recipient_id, message_body, sent_at) VALUES
+('11111111-6666-7777-8888-999999999999', '22222222-2222-2222-2222-222222222222', '11111111-1111-1111-1111-111111111111', 'Is the cabin available for May?', '2025-03-01 10:00:00'),
+('22222222-7777-8888-9999-000000000000', '11111111-1111-1111-1111-111111111111', '22222222-2222-2222-2222-222222222222', 'Yes, it’s available!', '2025-03-02 11:00:00'),
+('33333333-8888-9999-0000-111111111111', '44444444-4444-4444-4444-444444444444', '33333333-3333-3333-3333-333333333333', 'How’s the apartment location?', '2025-03-03 12:00:00'),
+('44444444-9999-0000-1111-222222222222', '33333333-3333-3333-3333-333333333333', '44444444-4444-4444-4444-444444444444', 'It’s great, right downtown!', '2025-03-04 13:00:00'),
+('55555555-0000-1111-2222-333333333333', '77777777-7777-7777-7777-777777777777', '66666666-6666-6666-6666-666666666666', 'Can I bring pets to the lake house?', '2025-03-05 14:00:00'),
+('66666666-1111-2222-3333-444444444444', '66666666-6666-6666-6666-666666666666', '77777777-7777-7777-7777-777777777777', 'Sorry, no pets allowed.', '2025-03-06 15:00:00'),
+('77777777-2222-3333-4444-555555555555', '99999999-9999-9999-9999-999999999999', '88888888-8888-8888-8888-888888888888', 'Is the villa available in July?', '2025-03-07 16:00:00'),
+('88888888-3333-4444-5555-666666666666', '88888888-8888-8888-8888-888888888888', '99999999-9999-9999-9999-999999999999', 'Yes, it’s available!', '2025-03-08 17:00:00'),
+('99999999-4444-5555-6666-777777777777', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'Does the cottage have Wi-Fi?', '2025-03-09 18:00:00'),
+('aaaaaaaa-5555-6666-7777-888888888888', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb', 'Yes, it has Wi-Fi.', '2025-03-10 19:00:00'),
+('bbbbbbbb-6666-7777-8888-999999999999', 'dddddddd-dddd-dddd-dddd-dddddddddddd', 'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'Is parking available at the penthouse?', '2025-03-11 20:00:00'),
+('cccccccc-7777-8888-9999-000000000000', 'eeeeeeee-eeee-eeee-eeee-eeeeeeeeeeee', 'dddddddd-dddd-dddd-dddd-dddddddddddd', 'Yes, parking is included.', '2025-03-12 21:00:00'),
+('dddddddd-8888-9999-0000-111111111111', 'ffffffff-ffff-ffff-ffff-ffffffffffff', '11111111-1111-1111-1111-111111111111', 'Can I check in early for the ski chalet?', '2025-03-13 22:00:00'),
+('eeeeeeee-9999-0000-1111-222222222222', '11111111-1111-1111-1111-111111111111', 'ffffffff-ffff-ffff-ffff-ffffffffffff', 'Please contact us closer to the date.', '2025-03-14 23:00:00'),
+('ffffffff-0000-1111-2222-333333333333', '22222222-2222-2222-2222-222222222222', '66666666-6666-6666-6666-666666666666', 'Does the desert retreat have a pool?', '2025-03-15 09:00:00');
