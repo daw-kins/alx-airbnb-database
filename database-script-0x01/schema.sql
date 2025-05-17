@@ -1,6 +1,7 @@
+
 -- Create User table
 CREATE TABLE user (
-    user_id UUID PRIMARY KEY,
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(100) NOT NULL UNIQUE,
@@ -15,8 +16,8 @@ CREATE INDEX idx_user_email ON user(email);
 
 -- Create Property table
 CREATE TABLE property (
-    property_id UUID PRIMARY KEY,
-    host_id UUID NOT NULL,
+    property_id INT AUTO_INCREMENT PRIMARY KEY,
+    host_id INT NOT NULL,
     name VARCHAR(100) NOT NULL,
     description TEXT,
     location VARCHAR(255) NOT NULL,
@@ -31,9 +32,9 @@ CREATE INDEX idx_property_host_id ON property(host_id);
 
 -- Create Booking table
 CREATE TABLE booking (
-    booking_id UUID PRIMARY KEY,
-    property_id UUID NOT NULL,
-    user_id UUID NOT NULL,
+    booking_id INT AUTO_INCREMENT PRIMARY KEY,
+    property_id INT NOT NULL,
+    user_id INT NOT NULL,
     start_date DATE NOT NULL,
     end_date DATE NOT NULL,
     status VARCHAR(20) NOT NULL,
@@ -50,8 +51,8 @@ CREATE INDEX idx_booking_status ON booking(status);
 
 -- Create Payment table
 CREATE TABLE payment (
-    payment_id UUID PRIMARY KEY,
-    booking_id UUID NOT NULL,
+    payment_id INT AUTO_INCREMENT PRIMARY KEY,
+    booking_id INT NOT NULL,
     amount DECIMAL(10, 2) NOT NULL,
     payment_date DATE NOT NULL,
     payment_method VARCHAR(50) NOT NULL,
@@ -63,9 +64,9 @@ CREATE INDEX idx_payment_booking_id ON payment(booking_id);
 
 -- Create Message table
 CREATE TABLE message (
-    message_id UUID PRIMARY KEY,
-    sender_id UUID NOT NULL,
-    recipient_id UUID NOT NULL,
+    message_id INT AUTO_INCREMENT PRIMARY KEY,
+    sender_id INT NOT NULL,
+    recipient_id INT NOT NULL,
     body TEXT NOT NULL,
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (sender_id) REFERENCES user(user_id) ON DELETE CASCADE,
@@ -78,10 +79,10 @@ CREATE INDEX idx_message_recipient_id ON message(recipient_id);
 
 -- Create Review table
 CREATE TABLE review (
-    review_id UUID PRIMARY KEY,
-    property_id UUID NOT NULL,
-    user_id UUID NOT NULL,
-    rating INTEGER NOT NULL CHECK (rating BETWEEN 1 AND 5),
+    review_id INT AUTO_INCREMENT PRIMARY KEY,
+    property_id INT NOT NULL,
+    user_id INT NOT NULL,
+    rating INT NOT NULL CHECK (rating BETWEEN 1 AND 5),
     comment TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (property_id) REFERENCES property(property_id) ON DELETE CASCADE,
