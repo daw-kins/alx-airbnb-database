@@ -1,4 +1,4 @@
--- Initial Query: Retrieve all bookings with user, property, and payment details
+-- Initial Query: Retrieve all bookings with user, property, and payment details with AND condition
 SELECT 
     b.booking_id,
     b.start_date,
@@ -22,6 +22,9 @@ INNER JOIN
     property p ON b.property_id = p.property_id
 LEFT JOIN 
     payment pay ON b.booking_id = pay.booking_id
+WHERE 
+    b.start_date >= '2025-01-01'
+    AND b.status = 'confirmed'
 ORDER BY 
     b.start_date DESC;
 
